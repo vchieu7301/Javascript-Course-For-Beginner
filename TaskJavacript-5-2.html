@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form>
+            <input type="number" id="num1" name="num1" >
+            <input type="number" id="num2"name="num2" >
+            <input type="button" onclick="Submit()" value="So Sanh">
+        </form>
+        <script type="text/javascript">
+            function Submit(){
+                
+                var a=document.getElementById('num1').value.trim();
+                var b=document.getElementById('num2').value.trim();
+                
+                if(a>b)
+                {
+                    window.alert(`số ${a} lớn hơn số ${b}`);
+                }
+                else if(a<b)
+                {
+                    window.alert(`số ${a} bé hơn số ${b}`);
+                }
+                else 
+                {
+                    window.alert(`số ${a} bằng số ${b}`);
+                }
+            }
+        </script>
+    </body>
+</html>

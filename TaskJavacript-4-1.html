@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form name="form_comma">
+            <input type="text" name="f_input" value="1234567890">
+            <input type="button" value="next" onclick="number_format()">
+            <input type="text" name="f_output">
+        </form>
+        <script type="text/javascript">
+            function number_format(){
+                var str=document.form_comma.f_input.value;
+                document.form_comma.f_output.value=getComma(str);
+            }
+            function getComma(num){
+                num=new String(num).replace(/,/g,"");
+                while (num!=(num=num.replace(/^(-?\d+)(\d{3})/,"$1,$2")));
+                return num;
+            }
+        </script>
+    </body>
+</html>

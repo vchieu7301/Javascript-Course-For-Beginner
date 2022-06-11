@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    var season = [1,2,3,4,5,6,7,8,9,10];
+
+    window.alert('Các phần tử của mãng gồm: ');
+
+season.forEach(element => {document.writeln(`${element}<br>`);
+    
+}); 
+    
+var tong = 0;
+var a = 0;
+while(a<=season.length){
+    tong+=a;
+    a++;
+}
+document.write(`Tổng các phần tử của mãng khi dùng while là: ${tong}<br>`);
+
+tong = 0;
+a = 0;
+while(true){
+    if(a<11){
+        tong+=a;
+        a++;
+    }else{
+        break;
+    }
+}
+document.write(`Tổng các phần tử của mãng khi dùng while(true) là: ${tong}<br>`);
+
+a=1;
+document.write(`Các số không phải là bội số của 2 là: `)
+while(a<11){
+    if(a%2==0){
+        a++;
+        continue;
+    }
+    document.write(`${a}, `);
+    a++;
+}
+</script>

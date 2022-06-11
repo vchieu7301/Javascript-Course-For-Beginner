@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function jankenpon(dasute){
+            var ransu = Math.floor(Math.random()*3);
+            var janken = ["Búa","Kéo","Bao"];
+            document.body.innerHTML+="Tay của máy ra gì(Kéo/Búa/Bao)";
+            document.body.innerHTML+=janken[ransu];
+            document.body.innerHTML+="&nbsp";
+            document.body.innerHTML+="Tay của bạn ra gì(Kéo/Búa/Bao)";
+            document.body.innerHTML+=janken[dasute];
+            document.body.innerHTML+="&nbsp";
+            if (ransu == dasute){
+                document.body.innerHTML+="Huề";
+                aikosu+=1;
+            }else if(dasute - ransu ==1 || dasute - ransu ==-2){
+                document.body.innerHTML+="Thua";
+                makesu+=1;
+            }else{
+                document.body.innerHTML+="Thắng";
+                kaichisu+=1;
+            }
+            document.body.innerHTML+="<br>";
+            document.getElementById("kachi").innerHTML=kaichisu;
+            document.getElementById("makesu").innerHTML=makesu;
+            document.getElementById("aiko").innerHTML=aikosu;
+            }
+            
+        </script>
+    </head>
+    <body>
+        Nguyen Chieu
+        <br>
+        <script type="text/javascript">
+            document.write("Hello World");
+            var kaichisu = 0;
+            var makesu = 0;
+            var aikosu = 0;
+        </script>
+        <br>
+        <input onclick="jankenpon(0);" type="button" value="Búa"/>
+        <input onclick="jankenpon(1);" type="button" value="kéo"/>
+        <input onclick="jankenpon(2);" type="button" value="Bao"/>
+        <br>
+        Inforgram
+        <br>
+        <span id="kachi">0</span> Thắng
+        <span id="makesu">0</span> Thua
+        <span id="aiko">0</span> Huề
+        <br>
+    </body>
+</html>

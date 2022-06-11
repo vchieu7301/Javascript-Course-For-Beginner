@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form name="form_zero">
+            <input type="text" name="f_input" value="123">
+            <input type="text" name="f_digit" value="5" size="2">
+            <input type="button" value="next" onclick="setDigit()">
+            <input type="text" name="f_output">
+        </form>
+        <script type="text/javascript">
+            function setDigit(){
+                var num = document.form_zero.f_input.value;
+                var digit = document.form_zero.f_digit.value;
+                document.form_zero.f_output.value=getZeroDigit(num,digit);
+            }
+            function getZeroDigit(num,digit){
+                var n,m,s;
+                if (isNaN(num)){
+                    s=num;
+                }else{
+                    s=num.toString();
+                }
+                m=digit-s.length;
+                for(n=0;n<m;n++){
+                    s="0"+s;
+                }
+                return s;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form>
+            Login ID: <br>
+            <input class="inputs" type="text" id="user" value=""><br>
+            Password: <br>
+            <input class="inputs" type="password" id="pass" value=""><br><br>
+            <input type="button" id="login" value="Login" onclick="Login()" >
+            <input type="button" id="clear" value="Clear" onclick="Clear()" >
+        </form>
+        <script type="text/javascript">
+            function Clear(){
+                var inputs = document.getElementsByClassName('inputs');
+                for (index of inputs){
+                    index.value='';
+                }
+            }
+            function Login(){
+                var user = document.getElementById('user').value.trim();
+                var pass = document.getElementById('pass').value.trim();
+
+                window.alert(`Bạn vừa nhập vào User: ${user} Password: ${pass}`);
+            }
+
+        </script>
+    </body>
+</html>

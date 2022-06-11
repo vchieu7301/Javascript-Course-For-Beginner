@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+</head>
+<body>
+    <form >
+        Nhập vị trí phần tử:<br>
+        <input type="text" name="number" id="number" >
+        <input type="button" value="Đánh giá mảng 1 chiều" onclick="LayPhanTu()">
+    </form>
+    <br>
+
+    <form >
+        Nhập X:<br>
+        <input type="text" name="x" id="x" ><br>
+        Nhập Y:<br>
+        <input type="text" name="y" id="y"><br><br>
+        <input type="button" value="Đánh giá mảng 2 chiều" onclick="Lay2D()">
+    </form>
+    <br>
+
+    <script type="text/javascript">
+
+        // khai báo mảng 1 chiều
+        var mang1=[2,3,5,7,11,13,17,19,23,29];
+
+        function LayPhanTu(){
+            var number= document.getElementById('number').value.trim();
+            if(number<=mang1.length){
+                document.body.innerHTML+=`Giá trị thứ ${number} bên trong mảng một chiều là ${mang1[number]}<br>`;
+                
+                //window.alert(`giá trị của mảng một chiều tại vị trí ${number} là ${mang[number]}`);
+            }
+            else{
+                window.alert(`vui lòng nhập số nhỏ hơn ${mang.length}`);
+            }
+        }
+
+        // khai báo mảng 2 chiều
+        var mang2= new Array(new Array("Tròn","X","Tròn","X","Tam Giác"),
+                            new  Array("X","Tròn","X","Tam Giác","X"),
+                            new  Array("Tròn","Vuông","Tròn","Vuông","Tam Giác"),
+                            new  Array("Vuông","Tròn","Vuông","Tam Giác","Vuông")
+                            );
+
+
+        function Lay2D(){
+            var x= document.getElementById('x').value.trim();
+            var y= document.getElementById('y').value.trim();
+          
+            document.body.innerHTML+=`Giá trị [${x}] và [${y}] bên trong mảng hai chiều là ${mang2[x][y]}<br>`;
+                    
+        }
+
+    </script>
+</body>
+</html>

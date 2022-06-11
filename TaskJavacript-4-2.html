@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form name="form_point">
+            <input type="text" name="f_input" value="1234567890">
+            <input type="text" name="f_point" value="2" size="2">
+            <input type="button" value="next" onclick="setPoint()">
+            <input type="text" name="f_output">
+        </form>
+        <script type="text/javascript">
+            function setPoint(){
+                var num = document.form_point.f_input.value;
+                var point = document.form_point.f_point.value;
+                document.form_point.f_output.value=getPointNumber(num,point);
+            }
+            function getPointNumber(num,point){
+                if(num.indexOf(".")<0)num+=".";
+                var s=num.split(".");
+                s[1]=s[1]+repeatText("0",point);
+                return s[0]+"."+s[1].substr(0,point);
+            }
+            function repeatText(s,num){
+                var t,n;
+                t="";
+                for(n=0;n<num;n++){
+                    t+=s;
+                }
+                return t;
+            }
+        </script>
+    </body>
+</html>
